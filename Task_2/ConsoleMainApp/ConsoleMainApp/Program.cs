@@ -1,7 +1,7 @@
 ﻿using System;
 using HelloWorldLibrary;
 
-namespace YourMainProject
+namespace MainProject
 {
     class Program
     {
