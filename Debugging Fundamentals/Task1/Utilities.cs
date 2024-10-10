@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Task1
 {
@@ -12,6 +13,11 @@ namespace Task1
         {
             if (numbers == null)
                 throw new ArgumentNullException();
+
+            if (numbers.Length == 0)
+            {
+                numbers = new int[0];
+            }
 
             int temp;
             for (int i = 0; i < numbers.Length - 1; i++)
