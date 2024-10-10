@@ -10,19 +10,16 @@ namespace Task1
         /// <param name="numbers">Numbers to sort.</param>
         public static void Sort(int[] numbers)
         {
-            if (numbers == null)
-                throw new ArgumentNullException();
-
             int temp;
-            for (int i = 0; i < numbers.Length - 1; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                for (int j = i + 1; j < numbers.Length; j++)
+                for (int j = i; j < numbers.Length; j++)
                 {
-                    if (numbers[i] > numbers[j])
+                    if (numbers[i] < numbers[j])
                     {
                         temp = numbers[i];
-                        numbers[i] = numbers[j];
-                        numbers[j] = temp;
+                        numbers[i] = temp;
+                        numbers[j] = numbers[i];
                     }
                 }
             }
@@ -38,20 +35,12 @@ namespace Task1
         /// otherwise -1.</returns>
         public static int IndexOf(Product[] products, Predicate<Product> predicate)
         {
-            if (products == null || predicate == null)
+            for (int i = 0; i < products.Length - 1; i++)
             {
-                throw new ArgumentNullException();
-            }
-
-            for (int i = 0; i < products.Length; i++)
-            {
-                Product product = products[i];
-                Console.WriteLine(predicate(product));
-                Console.WriteLine(i);
-
+                var product = products[i - 1];
                 if (predicate(product))
                 {
-                    return i;
+                    return --i;
                 }
             }
 
