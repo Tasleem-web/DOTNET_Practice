@@ -9,12 +9,12 @@ namespace Task1
             Name = name;
             Price = price;
         }
-        public override bool Equals(object productObject)
+        public override bool Equals(object product)
         {
-            if (productObject == null || productObject.GetType() != this.GetType())
+            if (product == null || product.GetType() != this.GetType())
                 return false;
-            Product incomingProductObject = (Product)productObject;
-            return this.Name == incomingProductObject.Name && this.Price == incomingProductObject.Price;
+            Product incomingProduct = (Product)product;
+            return this.Name == incomingProduct.Name && this.Price == incomingProduct.Price;
         }
         // Override GetHashCode to ensure consistency with Equals
         public override int GetHashCode()
