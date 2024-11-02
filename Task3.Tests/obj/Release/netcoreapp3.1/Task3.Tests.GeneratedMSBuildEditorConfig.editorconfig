@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Task3.Tests
+build_property.ProjectDir = C:\EPAM_WORKSPACE\DOTNET_Practice\Task3.Tests\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
