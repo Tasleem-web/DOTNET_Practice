@@ -1,0 +1,10 @@
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\bin\Debug\netcoreapp3.1\Task2.deps.json
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\bin\Debug\netcoreapp3.1\Task2.dll
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\bin\Debug\netcoreapp3.1\Task2.pdb
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\obj\Debug\netcoreapp3.1\Task2.GeneratedMSBuildEditorConfig.editorconfig
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\obj\Debug\netcoreapp3.1\Task2.AssemblyInfoInputs.cache
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\obj\Debug\netcoreapp3.1\Task2.AssemblyInfo.cs
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\obj\Debug\netcoreapp3.1\Task2.csproj.CoreCompileInputs.cache
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\obj\Debug\netcoreapp3.1\Task2.sourcelink.json
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\obj\Debug\netcoreapp3.1\Task2.dll
+C:\EPAM_WORKSPACE\DOTNET_Practice\Task2\obj\Debug\netcoreapp3.1\Task2.pdb

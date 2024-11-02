@@ -1,11 +1,46 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Task2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Task2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Task2.dll": {}
+        }
+      },
+      "Task3/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Task3.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Task3.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Task2/1.0.0": {
+      "type": "project",
+      "path": "../Task2/Task2.csproj",
+      "msbuildProject": "../Task2/Task2.csproj"
+    },
+    "Task3/1.0.0": {
+      "type": "project",
+      "path": "../Task3/Task3.csproj",
+      "msbuildProject": "../Task3/Task3.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Task2 >= 1.0.0",
+      "Task3 >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Mohammad_Tasleem\\.nuget\\packages\\": {}
@@ -34,7 +69,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\EPAM_WORKSPACE\\DOTNET_Practice\\Task2\\Task2.csproj": {
+              "projectPath": "C:\\EPAM_WORKSPACE\\DOTNET_Practice\\Task2\\Task2.csproj"
+            },
+            "C:\\EPAM_WORKSPACE\\DOTNET_Practice\\Task3\\Task3.csproj": {
+              "projectPath": "C:\\EPAM_WORKSPACE\\DOTNET_Practice\\Task3\\Task3.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
