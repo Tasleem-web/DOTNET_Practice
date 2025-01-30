@@ -13,21 +13,21 @@ namespace Task1.Tests
         [TestCase(0, ExpectedResult = 6)]
         [TestCase(-1, ExpectedResult = 10)]
         [TestCase(1, ExpectedResult = 5)]
-        public int Linq1_Limit_ReturnsCustomersCount(decimal limit)
+        public int GetHighValueCustomers_Limit_ReturnsCustomersCount(decimal limit)
         {
-            return LinqTask.Linq1(DataSource.Customers, limit).Count();
+            return LinqTask.GetHighValueCustomers(DataSource.Customers, limit).Count();
         }
 
         [Test]
-        public void Linq1_NullSource_ThrowsArgumentNullException()
+        public void GetHighValueCustomers_NullSource_ThrowsArgumentNullException()
         {
-            Assert.That(() => LinqTask.Linq1(null, 42).ToList(), Throws.ArgumentNullException);
+            Assert.That(() => LinqTask.GetHighValueCustomers(null, 42).ToList(), Throws.ArgumentNullException);
         }
 
         //[Test]
-        //public void Linq2_CustomersAndSuppliers_2CustomersHaveSuppliers()
+        //public void GetClientsWithFirstOrderDate_CustomersAndSuppliers_2CustomersHaveSuppliers()
         //{
-        //    var result = LinqTask.Linq2(DataSource.Customers, DataSource.Suppliers).ToList();
+        //    var result = LinqTask.GetClientsWithFirstOrderDate(DataSource.Customers, DataSource.Suppliers).ToList();
 
         //    Assert.That(() => result.Count, Is.EqualTo(DataSource.Customers.Count));
         //    foreach (var (customer, suppliers) in result)
@@ -41,15 +41,15 @@ namespace Task1.Tests
         //}
 
         [Test]
-        public void Linq2_NullCustomer_ThrowsArgumentNullException()
+        public void GetClientsWithFirstOrderDate_NullCustomer_ThrowsArgumentNullException()
         {
-            Assert.That(() => LinqTask.Linq2(null, null).ToList(), Throws.ArgumentNullException);
+            Assert.That(() => LinqTask.GetClientsWithFirstOrderDate(null, null).ToList(), Throws.ArgumentNullException);
         }
 
         //[Test]
-        //public void Linq2UsingGroup_CustomersAndSuppliers_2CustomersHaveSuppliers()
+        //public void GetClientsWithFirstOrderDateUsingGroup_CustomersAndSuppliers_2CustomersHaveSuppliers()
         //{
-        //    var result = LinqTask.Linq2UsingGroup(DataSource.Customers, DataSource.Suppliers).ToList();
+        //    var result = LinqTask.GetClientsWithFirstOrderDateUsingGroup(DataSource.Customers, DataSource.Suppliers).ToList();
 
         //    Assert.That(() => result.Count, Is.EqualTo(DataSource.Customers.Count));
         //    foreach (var (customer, suppliers) in result)
@@ -63,30 +63,30 @@ namespace Task1.Tests
         //}
 
         [Test]
-        public void Linq2UsingGroup_NullCustomer_ThrowsArgumentNullException()
+        public void GetClientsWithFirstOrderDateUsingGroup_NullCustomer_ThrowsArgumentNullException()
         {
-            Assert.That(() => LinqTask.Linq2UsingGroup(null, null).ToList(), Throws.ArgumentNullException);
+            Assert.That(() => LinqTask.GetClientsWithFirstOrderDateUsingGroup(null, null).ToList(), Throws.ArgumentNullException);
         }
 
         //[TestCase(800, ExpectedResult = 2)]
         //[TestCase(0, ExpectedResult = 6)]
         //[TestCase(-1, ExpectedResult = 6)]
         //[TestCase(1, ExpectedResult = 5)]
-        //public int Linq3_Limit_ReturnsCustomersCount(decimal limit)
+        //public int GetClientsWithFirstOrderDateOrdered_Limit_ReturnsCustomersCount(decimal limit)
         //{
-        //    return LinqTask.Linq3(DataSource.Customers, limit).Count();
+        //    return LinqTask.GetClientsWithFirstOrderDateOrdered(DataSource.Customers, limit).Count();
         //}
 
         [Test]
-        public void Linq3_NullCustomer_ThrowsArgumentNullException()
+        public void GetClientsWithFirstOrderDateOrdered_NullCustomer_ThrowsArgumentNullException()
         {
-            Assert.That(() => LinqTask.Linq3(null, 42).ToList(), Throws.ArgumentNullException);
+            Assert.That(() => LinqTask.GetClientsWithFirstOrderDateOrdered(null, 42).ToList(), Throws.ArgumentNullException);
         }
 
         //[Test]
-        //public void Linq4_Customers_CustomersAndDateOfEntry()
+        //public void GetClientsWithInvalidDetails_Customers_CustomersAndDateOfEntry()
         //{
-        //    var result = LinqTask.Linq4(DataSource.Customers).ToList();
+        //    var result = LinqTask.GetClientsWithInvalidDetails(DataSource.Customers).ToList();
 
         //    Assert.That(() => result.Count, Is.EqualTo(DataSource.Customers.Count - 4));
         //    foreach (var (customer, dateOfEntry) in result)
@@ -96,15 +96,15 @@ namespace Task1.Tests
         //}
 
         //[Test]
-        //public void Linq4_NullCustomer_ThrowsArgumentNullException()
+        //public void GetClientsWithInvalidDetails_NullCustomer_ThrowsArgumentNullException()
         //{
-        //    Assert.That(() => LinqTask.Linq4(null).ToList(), Throws.ArgumentNullException);
+        //    Assert.That(() => LinqTask.GetClientsWithInvalidDetails(null).ToList(), Throws.ArgumentNullException);
         //}
 
         //[Test]
-        //public void Linq5_Customers_CustomersAndDateOfEntry()
+        //public void GroupProductsByCategoryAndAvailability_Customers_CustomersAndDateOfEntry()
         //{
-        //    var result = LinqTask.Linq5(DataSource.Customers).ToList();
+        //    var result = LinqTask.GroupProductsByCategoryAndAvailability(DataSource.Customers).ToList();
 
         //    Assert.That(() => result.Count, Is.EqualTo(DataSource.Customers.Count - 4));
         //    foreach (var (customer, dateOfEntry) in result)
@@ -121,9 +121,9 @@ namespace Task1.Tests
         //}
 
         [Test]
-        public void Linq5_NullCustomer_ThrowsArgumentNullException()
+        public void GroupProductsByCategoryAndAvailability_NullCustomer_ThrowsArgumentNullException()
         {
-            Assert.That(() => LinqTask.Linq5(null).ToList(), Throws.ArgumentNullException);
+            Assert.That(() => LinqTask.GroupProductsByCategoryAndAvailability(null).ToList(), Throws.ArgumentNullException);
         }
 
         [Test]
@@ -146,7 +146,7 @@ namespace Task1.Tests
         }
 
         [Test]
-        public void Linq7_Customers_Returns5()
+        public void CalculateCityProfitabilityAndRateCategoryGroup_Customers_Returns5()
         {
             var expectedResult = new[]
             {
@@ -186,7 +186,7 @@ namespace Task1.Tests
                 }
             };
 
-            var result = LinqTask.Linq7(DataSource.Products);
+            var result = LinqTask.CalculateCityProfitabilityAndRate(DataSource.Products);
 
             foreach (var categoryGroup in result)
             {
@@ -201,9 +201,9 @@ namespace Task1.Tests
         }
 
         [Test]
-        public void Linq7_NullProducts_ThrowsArgumentNullException()
+        public void CalculateCityProfitabilityAndRate_NullProducts_ThrowsArgumentNullException()
         {
-            Assert.That(() => LinqTask.Linq7(null).ToList(), Throws.ArgumentNullException);
+            Assert.That(() => LinqTask.CalculateCityProfitabilityAndRate(null).ToList(), Throws.ArgumentNullException);
         }
 
         //[Test]
@@ -256,16 +256,16 @@ namespace Task1.Tests
         //}
 
         //[Test]
-        //public void Linq10_Suppliers_ReturnsAggregateString()
+        //public void GetHighValueCustomers0_Suppliers_ReturnsAggregateString()
         //{
-        //    string result = LinqTask.Linq10(DataSource.Suppliers);
+        //    string result = LinqTask.GetHighValueCustomers0(DataSource.Suppliers);
         //    StringAssert.AreEqualIgnoringCase("UKUSAJapanSpainBrazilSwedenGermanyAustralia", result);
         //}
 
         //[Test]
-        //public void Linq10_NullSuppliers_ThrowsArgumentNullException()
+        //public void GetHighValueCustomers0_NullSuppliers_ThrowsArgumentNullException()
         //{
-        //    Assert.That(() => LinqTask.Linq10(null).ToList(), Throws.ArgumentNullException);
+        //    Assert.That(() => LinqTask.GetHighValueCustomers0(null).ToList(), Throws.ArgumentNullException);
         //}
 
         private static DateTime FindCustomerOrdersMinDate(Customer customer)

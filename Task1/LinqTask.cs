@@ -8,13 +8,13 @@ namespace Task1
 {
     public static class LinqTask
     {
-        public static IEnumerable<Customer> Linq1(IEnumerable<Customer> customers, decimal limit)
+        public static IEnumerable<Customer> GetHighValueCustomers(IEnumerable<Customer> customers, decimal limit)
         {
             return customers.Where(cust => cust.Orders.Sum(s => s.Total) > limit);
 
         }
 
-        public static IEnumerable<(Customer customer, IEnumerable<Supplier> suppliers)> Linq2(
+        public static IEnumerable<(Customer customer, IEnumerable<Supplier> suppliers)> GetClientsWithFirstOrderDate(
             IEnumerable<Customer> customers,
             IEnumerable<Supplier> suppliers
         )
@@ -23,7 +23,7 @@ namespace Task1
             return (IEnumerable<(Customer customer, IEnumerable<Supplier> suppliers)>)customers.Select(cust => new { firstOrder = cust.Orders.Min(o => o.OrderDate) });
         }
 
-        public static IEnumerable<(Customer customer, IEnumerable<Supplier> suppliers)> Linq2UsingGroup(
+        public static IEnumerable<(Customer customer, IEnumerable<Supplier> suppliers)> GetClientsWithFirstOrderDateUsingGroup(
         IEnumerable<Customer> customers,
         IEnumerable<Supplier> suppliers)
         {
@@ -43,14 +43,14 @@ namespace Task1
             return customersWithFirstOrderDate.Select(c => (c.Customer, suppliers.Where(s => s.Country == c.Customer.Country && s.City == c.Customer.City)));
         }
 
-        public static IEnumerable<Customer> Linq3(IEnumerable<Customer> customers, decimal limit)
+        public static IEnumerable<Customer> GetClientsWithFirstOrderDateOrdered(IEnumerable<Customer> customers, decimal limit)
         {
             if (customers == null) throw new ArgumentNullException(nameof(customers));
-            var customersWithLimit = customers.Where(cust => Regex.IsMatch(cust.PostalCode, @"^\d+$") || string.IsNullOrEmpty(cust.Region) || (!cust.Phone.Contains("(")));
+            var customersWithLimit = customers.Where(cust => !cust.PostalCode.All(char.IsDigit) || string.IsNullOrEmpty(cust.Region) || (!cust.Phone.Contains("(")));
             return customersWithLimit.Where(c => c.Orders.Sum(o => o.Total) > limit);
         }
 
-        public static IEnumerable<(Customer customer, DateTime dateOfEntry)> Linq4(
+        public static IEnumerable<(Customer customer, DateTime dateOfEntry)> GetClientsWithInvalidDetails(
             IEnumerable<Customer> customers
         )
         {
@@ -59,7 +59,7 @@ namespace Task1
             throw new NotImplementedException();
         }
 
-        public static IEnumerable<(Customer customer, DateTime dateOfEntry)> Linq5(
+        public static IEnumerable<(Customer customer, DateTime dateOfEntry)> GroupProductsByCategoryAndAvailability(
             IEnumerable<Customer> customers
         )
         {
@@ -78,7 +78,7 @@ namespace Task1
             return customerList;
         }
 
-        public static IEnumerable<Linq7CategoryGroup> Linq7(IEnumerable<Product> products)
+        public static IEnumerable<Linq7CategoryGroup> CalculateCityProfitabilityAndRate(IEnumerable<Product> products)
         {
             if (products == null) throw new ArgumentNullException(nameof(products));
             return products
